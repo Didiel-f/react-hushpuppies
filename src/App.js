@@ -13,7 +13,7 @@ import Cart from './components/Cart/Cart';
 
 function App() {
   return (
-    <Router basename={window.location.pathname || ''}>
+    <Router basename ="/">
       <div className="app">
         <Switch>
           <Route exact path="/" component={MainScreen} />

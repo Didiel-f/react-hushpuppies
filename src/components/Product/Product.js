@@ -12,24 +12,24 @@ const Product = ({ addToCart }) => {
 
     const images = [
       {
-        original: 'https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475-1.jpg',
-        thumbnail: 'https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475-1.jpg',
+        original: 'https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343606/wbaqzrgdv2maznhgszzj.jpg',
+        thumbnail: 'https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343606/wbaqzrgdv2maznhgszzj.jpg',
       },
       {
-        original: 'https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475-2.jpg',
-        thumbnail: 'https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475-2.jpg',
+        original: 'https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343617/pdbh4sq9qq7c3ov8wnne.jpg',
+        thumbnail: 'https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343617/pdbh4sq9qq7c3ov8wnne.jpg',
       },
       {
-        original: 'https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475-4.jpg',
-        thumbnail: 'https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475-4.jpg',
+        original: 'https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343626/t0erpjhd0ngrwy7epikp.jpg',
+        thumbnail: 'https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343626/t0erpjhd0ngrwy7epikp.jpg',
       },
       {
-        original: 'https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475-3.jpg',
-        thumbnail: 'https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475-3.jpg',
+        original: 'https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343633/hngvloylqnels1yh69ie.jpg',
+        thumbnail: 'https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343633/hngvloylqnels1yh69ie.jpg',
       },
       {
-        original: 'https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475_2.jpg',
-        thumbnail: 'https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475_2.jpg',
+        original: 'https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343641/vkyndzrmxc5ko8diswi2.jpg',
+        thumbnail: 'https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343641/vkyndzrmxc5ko8diswi2.jpg',
       },
     ];
 
@@ -50,7 +50,7 @@ const Product = ({ addToCart }) => {
                             <span>Cod. de producto zap-005</span>
 
                             <h6 className="color">COLOR</h6>
-                            <img src="https://home.ripley.cl/store/Attachment/WOP/D311/2000375058475/2000375058475-1.jpg" alt="color" />
+                            <img src="https://res.cloudinary.com/dkpbs7ll6/image/upload/v1624343606/wbaqzrgdv2maznhgszzj.jpg" alt="color" />
 
                             <h6 className="size">TALLA</h6>
                             <div className="uele w-100">

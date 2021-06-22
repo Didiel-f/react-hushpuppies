@@ -36,7 +36,7 @@ const CartItem = ({ item, button, adjustQty, removeFromCart, addToCart }) => {
     <div className="card mb-4 shadow-sm">
       <div className="row">
         <div className="col-lg-7 img-container">
-            <img src={`assets/img/${ item.foto }`} className="card-img-top" alt="..." />
+            <img src={`assets/img/${ item.foto }`} className="card-img-top" alt="item" />
         </div>
 
         <div className="col-lg-5 card-h">

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -24,12 +24,48 @@ SwiperCore.use([Pagination]);
 
 
 
+
+
 const Slider = () => {
+
+  const [slpv, setSlpv] = useState(0);
+  const [intViewportWidth, setintViewportWidth] = useState(0);
+
+
+  const body = document.querySelector('body');
+
+
+  useEffect(() => {
+
+    let isMounted = true;
+    
+    const resizeObserver = new ResizeObserver(entries => {
+      setintViewportWidth(window.innerWidth);
+  
+      if (intViewportWidth > 991) {
+        if (isMounted) setSlpv(4);
+      }
+      if (intViewportWidth > 767 && intViewportWidth < 991) {
+        if (isMounted) setSlpv(3);
+      }
+      if (intViewportWidth < 767 && intViewportWidth > 479) {
+        if (isMounted) setSlpv(2);
+      }
+      if (intViewportWidth <= 479) {
+        if (isMounted) setSlpv(1);
+      }
+    });
+    resizeObserver.observe(body);
+    return () => { isMounted = false };
+  }, [slpv, body, intViewportWidth, setintViewportWidth])
+
+  
+  
     return (
         <>
           <div className="container sliders-container">
 
-            <Swiper slidesPerView={3} spaceBetween={30} className="mySwiper">
+            <Swiper slidesPerView={slpv} spaceBetween={30} className="mySwiper">
               {
                 shoesData.map( (item, i) => (
                   <SwiperSlide key={ i }>
@@ -42,7 +78,7 @@ const Slider = () => {
             <h3>PRODUCTOS RECOMENDADOS</h3>
             <hr />
 
-            <Swiper slidesPerView={3} spaceBetween={30} className="mySwiper">
+            <Swiper slidesPerView={slpv} spaceBetween={30} className="mySwiper">
               {
                 shoesData.map( (item, i) => (
                   <SwiperSlide key={ i }>

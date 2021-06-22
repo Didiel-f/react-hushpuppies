@@ -4,7 +4,6 @@ import { shoesData } from '../../shoesData/zapato';
 const INITIAL_STATE = {
     products: shoesData , // {id, title, descr, price, img}
     cart: [], // {id, title, descr, price, img, qty}
-    currentItem: null,
 }
 
 const shopReducer = (state = INITIAL_STATE, action) => {

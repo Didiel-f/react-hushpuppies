@@ -14,8 +14,6 @@ const Cart = ({ cart }) => {
   
   
 
-  console.log(cart)
-
   useEffect(() => {
     let items = 0;
     let price = 0;
