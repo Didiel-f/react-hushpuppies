@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  HashRouter,
+  BrowserRouter as Router,
   Switch,
   Route,
   // Redirect,
@@ -13,7 +13,7 @@ import Cart from './components/Cart/Cart';
 
 function App() {
   return (
-    <HashRouter>
+    <Router basename={window.location.pathname || ''}>
       <div className="app">
         <Switch>
           <Route exact path="/" component={MainScreen} />
@@ -21,7 +21,7 @@ function App() {
         </Switch>
         
       </div>
-    </HashRouter>
+    </Router>
   );
 }
 
