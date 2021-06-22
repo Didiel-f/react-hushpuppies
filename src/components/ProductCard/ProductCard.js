@@ -1,10 +1,23 @@
 import React from 'react';
 
 import { connect } from "react-redux";
+import Swal from 'sweetalert2';
 import { addToCart } from '../../redux/Shopping/shopping-actions';
 
 
 const ProductCard = ({ item, addToCart, button }) => {
+
+
+    const startAddingToCart = (itemID, itemName) => {
+
+        addToCart(itemID)
+        Swal.fire(
+            'Agregado',
+            `Se ha agregado "${itemName}" al carrito`,
+            'success'
+          )
+    };
+    
     
     return (
         <div className="card" style={{width: "18rem"}}>
@@ -23,7 +36,7 @@ const ProductCard = ({ item, addToCart, button }) => {
                 (button) 
                     &&
                     (<button 
-                        onClick={() => addToCart(item.foto)}
+                        onClick={() => startAddingToCart(item.foto, item.nombre)}
                         className="btn btn-lg"
                     >
                         AGREGAR AL CARRITO

@@ -1,38 +1,56 @@
 import React, { useState } from "react";
 
 import {connect} from 'react-redux';
+import Swal from "sweetalert2";
 import { addToCart, adjustQty, removeFromCart } from "../../../redux/Shopping/shopping-actions";
 
 import './CartItem.css'
 
 const CartItem = ({ item, button, adjustQty, removeFromCart, addToCart }) => {
-  const [input, setInput] = useState(item.qty);
-  
-  const onChangeHandler = (e) => {
-    setInput(e);
-    adjustQty(item.foto, e);
-  };
-
-//Logica del input QTY
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(item.qty);
 
   const decrementCount = () => {
-    if (count > 0) {
+    if (count > 1) {
       setCount(count - 1)
-      onChangeHandler(count)
+      adjustQty(item.foto, -1 + count);
     };
   };
 
   const incrementCount = () => {
-    setCount(count + 1);
-    onChangeHandler(count)
+    setCount(count +1);
+    adjustQty(item.foto, 1 + count);
   };
+
+
+
+  const startRemovingFromCart = (itemID) => {
+
+    Swal.fire({
+        title: 'Confirmar',
+        text: `Se eliminará del carrito el producto "${item.nombre}"`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Si, eliminar!',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            removeFromCart(itemID)
+          Swal.fire(
+            'Eliminado!',
+            `"${item.nombre}" fue eliminado del carrito de compras.`,
+            'success'
+          )
+        }
+      })
+
+};
+  
   
 
   return (
 
-    
-    
     <div className="card mb-4 shadow-sm">
       <div className="row">
         <div className="col-lg-7 img-container">
@@ -49,9 +67,9 @@ const CartItem = ({ item, button, adjustQty, removeFromCart, addToCart }) => {
                 className="h-input"
                 // type="number"
                 name="clicks"
-                value={input}
-                onChange={event => {
-                  setCount(event.target.value);
+                value={count}
+                onChange={ () => {
+                  console.log()
                 }}
               />
               <a href="#/" className="btn btn-primary btn-sm p-2 h-btn" onClick={incrementCount}>+</a>
@@ -59,7 +77,7 @@ const CartItem = ({ item, button, adjustQty, removeFromCart, addToCart }) => {
             <a
               className="btn btn-outline-danger delete-btn"
               href="#/"
-              onClick={() => removeFromCart(item.foto)}
+              onClick={() => startRemovingFromCart(item.foto)}
             >
               <i className="bi bi-trash"></i>
             </a>
@@ -70,49 +88,6 @@ const CartItem = ({ item, button, adjustQty, removeFromCart, addToCart }) => {
       </div>
       
     </div>
-
-
-
-    
-    
-    
-    
-
-    // <div className="card">
-    //   <img
-    //     className=""
-    //     src={`assets/img/${ item.foto }`}
-    //     alt={item.title}
-    //   />
-    //   <div className="">
-    //     <p className="">{item.nombre}</p>
-    //     <p className="">$ {item.precio}</p>
-    //   </div>
-    //   <div className="">
-    //     <div className="">
-    //       <label htmlFor="qty">Qty</label>
-    //       <input
-    //         min="1"
-    //         type="number"
-    //         id="qty"
-    //         name="qty"
-    //         value={input}
-    //         onChange={onChangeHandler}
-    //       />
-    //     </div>
-    //     <button
-    //       onClick={() => removeFromCart(item.foto)}
-    //       className=""
-    //     >
-    //       <img
-    //         src="https://image.flaticon.com/icons/svg/709/709519.svg"
-    //         alt=""
-    //       />
-    //     </button>
-    //   </div>
-    // </div>
-    
-    
   
   );
 };

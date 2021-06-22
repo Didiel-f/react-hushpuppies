@@ -102,7 +102,6 @@ const Product = ({ addToCart }) => {
 const mapDispatchToProps = dispatch => {
     return {
       addToCart: (id) => dispatch(addToCart(id)),
-    //   loadCurrentItem: (item) => dispatch(loadCurrentItem(item))
     }
   }
 
