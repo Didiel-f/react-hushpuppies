@@ -1,0 +1,61 @@
+
+.h-btn {
+    
+    max-height: 40px;
+    max-width: 40px;
+
+    min-height: 30px;
+    min-width: 30px;
+}
+
+.h-input {
+
+    border-radius: 0;
+    border: 0;
+    text-align: center;
+    
+    max-height: 30px;
+    max-width: 40px;
+
+    min-height: 30px;
+    min-width: 40px;
+}
+
+.qty-buttons {
+    width: 102px;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 4%;
+    bottom: 7%;
+}
+
+.card-h {
+    min-height: 235px;
+    max-height: 235px;
+}
+
+
+
+.btn-primary{
+    border: none !important;
+}
+.btn-primary:hover{
+    color: black;
+    background-color: white;
+    border: 2px solid rgb(132, 88, 101) !important;
+}
+
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.btn-primary:active{
+    color: black;
+    background-color: rgb(132, 88, 101);
+}
+.btn-primary:focus{
+    box-shadow: none;
+    color: black;
+    background-color: rgb(132, 88, 101);
+}

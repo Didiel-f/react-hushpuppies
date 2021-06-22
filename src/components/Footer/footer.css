@@ -1,0 +1,82 @@
+
+
+.contact {
+    background-color: rgb(231, 230, 226) !important;
+    color: rgb(120, 120, 120);
+    margin-top: 30px;
+    padding: 45px 45px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact i{
+    padding-top: 10px;
+    font-size: 21px;
+}
+.contact h2{
+    font-family: serif !important;
+}
+.contact .icons-container {
+    border-top: 2px solid black;
+    text-align: center;
+    margin-top: -20px;
+    position: relative;    
+    left: 45%;
+    width: 11%;
+}
+
+.contact .icons-container i:last-child{
+    margin-left: 20px;
+}
+
+.bottom-footer{
+    margin-right: 115px;
+    margin-left: 115px;
+    margin-bottom: 36px;
+}
+
+.row .col-md-3 a:first-of-type{
+    margin-top: 15px;
+}
+
+.row .col-md-3 a{
+    color: rgb(80, 80, 80);
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.search-bar input{
+    border-radius: 0 !important;
+    width: 100%;
+}
+
+.logosFooter img{
+    position: relative;
+    margin-top: 40px;
+    left: 120px;
+    bottom: 20px;
+    width: 80%;
+}
+
+
+
+@media (max-width: 614px) {
+    .no-display-in-small {
+      display: none;
+    }
+}
+
+@media (max-width: 576PX) {
+    .contact .icons-container {
+        width: 20%;
+    }
+}
+
+@media (max-width: 660px) {
+    .bottom-footer {
+        display: block;
+        font-size: 20px;
+    }
+}

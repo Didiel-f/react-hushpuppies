@@ -1,0 +1,41 @@
+import * as actionTypes from './shopping-types';
+import { shoesData } from '../../shoesData/zapato';
+
+const INITIAL_STATE = {
+    products: shoesData , // {id, title, descr, price, img}
+    cart: [], // {id, title, descr, price, img, qty}
+    currentItem: null,
+}
+
+const shopReducer = (state = INITIAL_STATE, action) => {
+    switch (action.type) {
+        case actionTypes.ADD_TO_CART:
+            //Get the items data from the products array
+            const item = state.products.find(prod => prod.foto === action.payload.id)
+            // Check if Item is in cart already
+            const inCart = state.cart.find(item => item.foto === action.payload.id ? true : false)
+            return {
+                ...state,
+                cart: inCart ? state.cart.map( item => item.foto === action.payload.id ? {...item, qty: item.qty + 1} : item ) : [...state.cart, { ...item, qty: 1}],
+            }
+        case actionTypes.REMOVE_FROM_CART:
+            return {
+                ...state,
+                cart: state.cart.filter( item => item.foto !== action.payload.id ),
+            };
+        case actionTypes.ADJUST_QTY:
+            return {
+                ...state,
+                cart: state.cart.map( item => item.foto === action.payload.id ? { ...item, qty: + action.payload.qty } : item ),
+            }
+        case actionTypes.LOAD_CURRENT_ITEM:
+            return {
+                ...state,
+                currentItem: action.payload,
+            }
+        default:
+            return state;
+    }
+};
+
+export default shopReducer;

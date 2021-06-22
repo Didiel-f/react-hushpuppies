@@ -1,0 +1,112 @@
+#root { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+
+.swiper-container {
+    margin-top: 20px;
+  width: 100%;
+  height: 400px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  width: 301px !important;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide .main-img {
+  display: block;
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  margin-left: 220px;
+  margin-top: -90px;
+}
+
+.swiper-slide .thumbnail-img{
+    width: 50px !important;
+    position: relative;
+}
+
+.swiper-slide h4{
+    color: black !important;
+    font-size: 50px;
+}
+
+.img-container {
+    height: 160px;
+}
+
+.card-img-top {
+    margin-top: 35px;
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.thumbnail-container img{
+    height: 40px;
+    margin-top: 40px;
+    object-fit: contain;
+}
+
+.swiper-slide .card{
+    border: 0;
+}
+
+.card-body .card-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 27px;
+}
+.card-body .card-text {
+    color: rgb(132, 88, 101);
+    font-size: 21px;
+    font-weight: bold;
+}
+
+
+.card-body button {
+    background-color: rgb(132, 88, 101);
+    border-radius: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 0px;
+    padding: 15px 49px;
+    transition: ease .4s;
+}
+
+.card-body button:hover {
+    background-color: white;
+    border: 2px solid rgb(132, 88, 101);
+}
+
+.sliders-container h3{
+    font-family: serif !important;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: -10px;
+    margin-top: 30PX;
+}
