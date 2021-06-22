@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 
-import logo from '../assets/img/logo-2.png';
 
 import './headers.css';
 
@@ -42,7 +41,7 @@ const Header = ({cart}) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-6">
-                            <img className="logo d-sm-none d-none d-md-block d-lg-block" src={ logo } alt="logo" />
+                            <img className="logo d-sm-none d-none d-md-block d-lg-block" src="../assets/img/logo-2.png" alt="logo" />
                         </div>
 
                         <div className="col-6 right-col">
@@ -65,7 +64,7 @@ const Header = ({cart}) => {
                 <nav className="pt-2 border-bottom navbar navbar-expand-lg navbar-light nav-responsive">
                     <div className="container">
                         <a className="navbar-brand" href="/">
-                            <img className="logo d-sm-block d-block d-md-none d-lg-none" src={ logo } alt="logo" />
+                            <img className="logo d-sm-block d-block d-md-none d-lg-none" src="../assets/img/logo-2.png" alt="logo" />
                         </a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
